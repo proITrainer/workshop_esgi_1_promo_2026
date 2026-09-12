@@ -1,6 +1,6 @@
 /* =========================================================================
    Charte graphique - ESGI + Campus Skolae Rouen
-   Couleurs echantillonnees sur les logos fournis :
+   Couleurs échantillonnées sur les logos fournis :
      - anthracite / noir : texte ESGI + rond Skolae
      - cyan ESGI (accent) : le point du "i"
    ========================================================================= */
@@ -27,7 +27,7 @@ body {
   line-height: 1.5;
 }
 
-/* ---------- En-tete (bandeau co-brande) ---------- */
+/* ---------- En-tête (bandeau co-brandé) ---------- */
 .bandeau {
   display: flex;
   align-items: center;
@@ -91,7 +91,7 @@ body {
   background: linear-gradient(120deg, var(--anthracite), var(--cyan-fonce));
 }
 
-/* Avatar rond facon badge (clin d'oeil au rond Skolae) */
+/* Avatar rond façon badge (clin d'œil au rond Skolae) */
 .avatar {
   width: 96px;
   height: 96px;

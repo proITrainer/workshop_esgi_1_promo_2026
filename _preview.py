@@ -1,11 +1,11 @@
 """
-_preview.py - Apercu LOCAL du site (sans Ruby/Jekyll).
+_preview.py - Aperçu LOCAL du site (sans Ruby/Jekyll).
 
-Ce script emule le rendu Jekyll : il lit les fiches de _promo/, applique la meme
-structure HTML que _layouts/default.html + index.html et la meme feuille de style,
-puis ecrit _preview.html (ouvrable directement dans un navigateur).
+Ce script émule le rendu Jekyll : il lit les fiches de _promo/, applique la même
+structure HTML que _layouts/default.html + index.html et la même feuille de style,
+puis écrit _preview.html (ouvrable directement dans un navigateur).
 
-C'est UNIQUEMENT un outil de verification visuelle. Le vrai site est construit
+C'est UNIQUEMENT un outil de vérification visuelle. Le vrai site est construit
 par GitHub Pages. _preview.html et ce script sont exclus de la publication.
 
     python _preview.py
@@ -71,7 +71,7 @@ def main():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Apercu - Trombinoscope</title>
+<title>Aperçu - Trombinoscope</title>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -81,14 +81,14 @@ def main():
     <img class="logo" src="assets/img/esgi.jpg" alt="ESGI">
   </div>
   <div class="titres">
-    <h1>Promo 2025 - 1re annee Cybersecurite</h1>
-    <p>Semaine d'integration &middot; Detection de phishing par IA</p>
+    <h1>Promo 2025 - 1re année Cybersécurité</h1>
+    <p>Semaine d'intégration &middot; Détection de phishing par IA</p>
   </div>
 </header>
 <main class="conteneur">
   <section class="intro">
     <h2>Notre promo</h2>
-    <p>Chaque etudiant a cree sa fiche pendant la semaine d'integration.</p>
+    <p>Chaque étudiant a créé sa fiche pendant la semaine d'intégration.</p>
   </section>
   <section class="grille">
     {''.join(cartes)}
@@ -99,13 +99,13 @@ def main():
     <img class="logo-pied" src="assets/img/skolae-rouen.png" alt="Campus Skolae Rouen">
     <img class="logo-pied" src="assets/img/esgi.jpg" alt="ESGI">
   </div>
-  <p>ESGI &middot; Campus Skolae Rouen &middot; Semaine d'integration</p>
+  <p>ESGI &middot; Campus Skolae Rouen &middot; Semaine d'intégration</p>
 </footer>
 </body>
 </html>"""
     out = HERE / "_preview.html"
     out.write_text(page, encoding="utf-8")
-    print("Apercu ecrit :", out, "(", len(fiches), "fiches )")
+    print("Aperçu écrit :", out.name, "(", len(fiches), "fiches )")
 
 
 if __name__ == "__main__":
