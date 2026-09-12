@@ -1,0 +1,155 @@
+/* =========================================================================
+   Charte graphique - ESGI + Campus Skolae Rouen
+   Couleurs echantillonnees sur les logos fournis :
+     - anthracite / noir : texte ESGI + rond Skolae
+     - cyan ESGI (accent) : le point du "i"
+   ========================================================================= */
+:root {
+  --anthracite: #232323;
+  --noir: #000000;
+  --cyan: #0093bb;         /* accent principal */
+  --cyan-clair: #15c5dd;   /* highlights */
+  --cyan-fonce: #006f8f;   /* liens (meilleur contraste) */
+  --gris-fond: #f4f6f8;
+  --gris-bordure: #e6eaee;
+  --gris-texte: #5a636b;
+  --blanc: #ffffff;
+  --ombre: 0 6px 18px rgba(35, 35, 35, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--anthracite);
+  background: var(--gris-fond);
+  line-height: 1.5;
+}
+
+/* ---------- En-tete (bandeau co-brande) ---------- */
+.bandeau {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  background: var(--blanc);
+  padding: 18px 28px;
+  border-bottom: 5px solid var(--cyan);
+  box-shadow: var(--ombre);
+}
+.logos { display: flex; align-items: center; gap: 18px; }
+.logo { height: 60px; width: auto; display: block; }
+.titres h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--anthracite);
+  letter-spacing: -0.01em;
+}
+.titres p {
+  margin: 2px 0 0;
+  color: var(--cyan-fonce);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ---------- Contenu ---------- */
+.conteneur { max-width: 1080px; margin: 0 auto; padding: 28px 20px 48px; }
+.intro { text-align: center; margin: 8px 0 28px; }
+.intro h2 {
+  display: inline-block;
+  margin: 0 0 6px;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--cyan-clair);
+}
+.intro p { color: var(--gris-texte); max-width: 640px; margin: 0 auto; }
+.intro a { color: var(--cyan-fonce); }
+
+/* ---------- Grille de cartes ---------- */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.carte {
+  background: var(--blanc);
+  border: 1px solid var(--gris-bordure);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--ombre);
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.carte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 147, 187, 0.18);
+}
+
+.carte-entete {
+  height: 66px;
+  background: linear-gradient(120deg, var(--anthracite), var(--cyan-fonce));
+}
+
+/* Avatar rond facon badge (clin d'oeil au rond Skolae) */
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: -48px auto 0;
+  border-radius: 50%;
+  border: 4px solid var(--blanc);
+  background: var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(35, 35, 35, 0.18);
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.initiales { color: var(--blanc); font-size: 2rem; font-weight: 700; }
+
+.carte-corps { padding: 14px 18px 22px; }
+.carte-corps h3 { margin: 10px 0 4px; font-size: 1.2rem; color: var(--anthracite); }
+.objectif { margin: 4px 0 10px; color: var(--cyan-fonce); font-weight: 600; }
+.bio { margin: 8px 0; color: var(--gris-texte); font-size: 0.95rem; }
+.fun {
+  margin: 12px 0 6px;
+  font-size: 0.9rem;
+  color: var(--gris-texte);
+  background: var(--gris-fond);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.fun span {
+  display: inline-block;
+  color: var(--cyan-fonce);
+  font-weight: 700;
+  margin-right: 4px;
+}
+.lien {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--cyan-fonce);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.lien:hover { color: var(--cyan-clair); text-decoration: underline; }
+
+/* ---------- Pied de page ---------- */
+.pied {
+  text-align: center;
+  padding: 26px 20px 34px;
+  background: var(--blanc);
+  border-top: 5px solid var(--cyan);
+  margin-top: 40px;
+}
+.logos-pied { display: flex; align-items: center; justify-content: center; gap: 18px; margin-bottom: 8px; }
+.logo-pied { height: 40px; width: auto; opacity: 0.9; }
+.pied p { margin: 0; color: var(--gris-texte); font-size: 0.9rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 520px) {
+  .bandeau { justify-content: center; text-align: center; }
+  .titres h1 { font-size: 1.25rem; }
+}

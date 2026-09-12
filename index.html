@@ -1,0 +1,41 @@
+---
+layout: default
+title: Trombinoscope de la promo
+---
+
+<section class="intro">
+  <h2>Notre promo</h2>
+  <p>
+    Chaque etudiant a cree sa fiche pendant la semaine d'integration.
+    Pour ajouter la votre, suivez le
+    <a href="https://github.com/{{ site.github_repo | default: 'VOTRE-COMPTE/workshop-esgi' }}#ajouter-ma-fiche">guide (README)</a>.
+  </p>
+</section>
+
+{% assign fiches = site.promo | sort: 'nom' %}
+<section class="grille">
+  {% for f in fiches %}
+    {% unless f.path contains 'TEMPLATE' %}
+    <article class="carte">
+      <div class="carte-entete"></div>
+      <div class="avatar">
+        {% if f.photo and f.photo != '' %}
+          <img src="{{ '/photos/' | append: f.photo | relative_url }}" alt="{{ f.prenom }} {{ f.nom }}">
+        {% else %}
+          <span class="initiales">{{ f.prenom | slice: 0 | upcase }}{{ f.nom | slice: 0 | upcase }}</span>
+        {% endif %}
+      </div>
+      <div class="carte-corps">
+        <h3>{{ f.prenom }} {{ f.nom }}</h3>
+        {% if f.objectif and f.objectif != '' %}<p class="objectif">{{ f.objectif }}</p>{% endif %}
+        {% if f.bio and f.bio != '' %}<p class="bio">{{ f.bio }}</p>{% endif %}
+        {{ f.content }}
+        {% if f.fun_fact and f.fun_fact != '' %}<p class="fun"><span>Fun fact</span> {{ f.fun_fact }}</p>{% endif %}
+        {% if f.github and f.github != '' %}
+          <a class="lien" href="https://github.com/{{ f.github }}" target="_blank" rel="noopener">GitHub &rarr; {{ f.github }}</a>
+        {% endif %}
+      </div>
+    </article>
+    {% endunless %}
+  {% endfor %}
+</section>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'fr' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+  <header class="bandeau">
+    <div class="logos">
+      <img class="logo" src="{{ '/assets/img/skolae-rouen.png' | relative_url }}" alt="Campus Skolae Rouen">
+      <img class="logo" src="{{ '/assets/img/esgi.jpg' | relative_url }}" alt="ESGI">
+    </div>
+    <div class="titres">
+      <h1>{{ site.promo | default: "Promo" }}</h1>
+      <p>Semaine d'integration &middot; Detection de phishing par IA</p>
+    </div>
+  </header>
+
+  <main class="conteneur">
+    {{ content }}
+  </main>
+
+  <footer class="pied">
+    <div class="logos-pied">
+      <img class="logo-pied" src="{{ '/assets/img/skolae-rouen.png' | relative_url }}" alt="Campus Skolae Rouen">
+      <img class="logo-pied" src="{{ '/assets/img/esgi.jpg' | relative_url }}" alt="ESGI">
+    </div>
+    <p>ESGI &middot; Campus Skolae Rouen &middot; Semaine d'integration</p>
+  </footer>
+
+</body>
+</html>

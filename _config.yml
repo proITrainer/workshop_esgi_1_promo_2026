@@ -1,0 +1,28 @@
+# ============================================================
+#  Site de promo - Semaine d'integration ESGI / Campus Skolae Rouen
+# ============================================================
+
+title: "Trombinoscope de la promo"
+description: "Semaine d'integration - ESGI / Campus Skolae Rouen"
+lang: fr
+
+# Nom de la promo affiche en haut du site (a personnaliser)
+promo: "Promo 2025 - 1re annee Cybersecurite"
+
+# --- IMPORTANT pour l'affichage des images ---
+# - Si le site est publie sur  <compte>.github.io           -> laissez baseurl vide : ""
+# - Si le site est publie sur  <compte>.github.io/<depot>   -> mettez  baseurl: "/<depot>"
+baseurl: ""
+url: ""
+
+# Collection des fiches etudiants (dossier _promo/)
+collections:
+  promo:
+    output: false
+
+# Fichiers a ne pas publier
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
