@@ -12,8 +12,9 @@ promo: "Promo 2025 - 1re année Cybersécurité"
 # --- IMPORTANT pour l'affichage des images ---
 # - Si le site est publié sur  <compte>.github.io           -> laissez baseurl vide : ""
 # - Si le site est publié sur  <compte>.github.io/<depot>   -> mettez  baseurl: "/<depot>"
-baseurl: "/workshop-esgi"
-url: ""
+#   (le <depot> doit correspondre EXACTEMENT au nom du dépôt GitHub, casse comprise)
+baseurl: "/workshop_esgi_1_promo_2026"
+url: "https://proitrainer.github.io"
 
 # Collection des fiches étudiants (dossier _promo/)
 collections:
